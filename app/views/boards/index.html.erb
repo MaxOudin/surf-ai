@@ -10,13 +10,16 @@
        <div class="cards">
         <% @boards.each do |board| %>
         <div class="card-white">
-          <li>
-            <h6><strong> <%= board.name %></h6>
-            <p></strong><%= board.description %></strong></p>
-            <p></strong><%= board.board_type %></p>
-            <p><%= board.price %></p>
-          </li>
+          <div class="content">
+            <li>
+              <h6><strong> <%= board.name %></h6>
+              <p></strong><%= board.description %></strong></p>
+              <p></strong><%= board.board_type %></p>
+              <p><%= board.price %> <i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
+            </li>
+            </div>
           </div>
+
         <% end %>
          </div>
       </ul>
