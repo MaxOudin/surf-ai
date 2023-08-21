@@ -4,4 +4,6 @@ class Board < ApplicationRecord
   has_many :users, through: :bookings
 
   validates :name, :type, :price, presence: true
+
+  has_many_attached :photos
 end
