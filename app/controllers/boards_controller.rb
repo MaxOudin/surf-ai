@@ -1,13 +1,16 @@
 class BoardsController < ApplicationController
   before_action :find_user_id, only: %i[new create]
-  def new
-    @board = Board.new
+  def index
+    @boards = Board.all
   end
 
   def show
     @board = Board.find(params[:id])
   end
-
+  
+  def new
+    @board = Board.new
+    
   def create
     @board = Board.new(board_params)
     @board.user = @board
@@ -32,3 +35,4 @@ class BoardsController < ApplicationController
     params.require(:board).permit(:name, :description, :board_type, :price, photos: [])
   end
 end
+
