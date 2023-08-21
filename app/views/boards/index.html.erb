@@ -1,0 +1,23 @@
+
+
+<div class="container">
+
+  <h1>Liste des planches</h1>
+
+
+
+      <ul>
+       <div class="cards">
+        <% @boards.each do |board| %>
+        <div class="card-white">
+          <li>
+            <h6><strong> <%= board.name %></h6>
+            <p></strong><%= board.description %></strong></p>
+            <p></strong><%= board.board_type %></p>
+            <p><%= board.price %></p>
+          </li>
+          </div>
+        <% end %>
+         </div>
+      </ul>
+</div>
