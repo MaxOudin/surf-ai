@@ -17,15 +17,13 @@ michael = User.create!(first_name: 'Michael', last_name: 'Johnson', location: 'B
 
 puts "creation 3 users done"
 
-longboard = Board.new(name: "Beginner's Soft-Top Longboard", board_type: "longboard", price: 20)
-longboardi = Board.new(name: "Beginner's Soft-Top Longboard", board_type: "longboard", price: 20)
-shortboard = Board.new(name: "Performance Shortboard", board_type: "shortboard ", price: 35)
-fish = Board.new(name: "Fish Hybrid Surfboard", board_type: "fish", price: 30)
+longboard = Board.new(name: "Beginner's Soft-Top Longboard", board_type: "longboard", description: "A stable and forgiving soft-top longboard, perfect for beginners learning to catch their first waves.", price: 20)
+shortboard = Board.new(name: "Performance Shortboard", board_type: "shortboard ", description: "A versatile fish hybrid surfboard, great for riders who want speed and maneuverability in all conditions.", price: 35)
+fish = Board.new(name: "Fish Hybrid Surfboard", board_type: "fish", description: "A versatile fish hybrid surfboard, great for riders who want speed and maneuverability in all conditions.", price: 32)
 
 puts "creation 3 boards done"
 
 longboard.user = john
-longboardi.user = jane
 shortboard.user = jane
 fish.user = michael
 
