@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  before_action :find_user_id, only: %i[new create]
   def index
     @boards = Board.all
   end
@@ -8,12 +9,9 @@ class BoardsController < ApplicationController
   end
   
   def new
-    @user = User.find(params[:user_id])
     @board = Board.new
-  end
-  
+    
   def create
-    @user = User.find(params[:user_id])
     @board = Board.new(board_params)
     @board.user = @board
     if @board.save
@@ -24,6 +22,10 @@ class BoardsController < ApplicationController
   end
 
   private
+
+  def find_user_id
+    @user = User.find(params[:user_id])
+  end
 
   def set_user
     @user = User.find(params[:user_id])
