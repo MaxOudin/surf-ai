@@ -8,7 +8,7 @@ class BoardsController < ApplicationController
     @user = User.find(params[:user_id])
     @board = Board.new(board_params)
     @board.user = @board
-    if @@board.save
+    if @board.save
       redirect_to user_path(@user)
     else
       render :new, status: :unprocessable_entity
