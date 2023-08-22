@@ -7,10 +7,11 @@ class BoardsController < ApplicationController
   def show
     @board = Board.find(params[:id])
   end
-  
+
   def new
     @board = Board.new
-    
+  end
+
   def create
     @board = Board.new(board_params)
     @board.user = @board
@@ -35,4 +36,3 @@ class BoardsController < ApplicationController
     params.require(:board).permit(:name, :description, :board_type, :price, photos: [])
   end
 end
-
