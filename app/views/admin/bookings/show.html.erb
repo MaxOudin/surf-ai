@@ -13,7 +13,7 @@
         <h6><strong><%= @booking.board.name %></strong></h6>
         <p> <strong>Categorie :</strong> <%= @booking.board.board_type %></p>
         <p> Planche louée du <%= @booking.date_start%> au <%= @booking.date_end %></p>
-        <p> <strong><%= (@booking.board.price * (@booking.date_end - @booking.date_start))%> </strong> euros</p>
+        <p> <strong><%= %2f(@booking.board.price * (@booking.date_end - @booking.date_start))%> </strong> euros</p>
       </div>
       <button class="btn btn-surf"><%= link_to 'Retour sur mes réservations', admin_bookings_path(current_user) %>
       </button>
