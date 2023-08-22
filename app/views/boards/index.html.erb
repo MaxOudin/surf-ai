@@ -23,11 +23,13 @@
               <p></strong><%= board.description %></strong></p>
               <p></strong><%= board.board_type %></p>
               <p><%= board.price %> <i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
-              </li>
             </div>
             <%= link_to '', board_path(board), class: 'card-link'  %>
            </div>
         <% end %>
       </div>
       </ul>
+      <p>-----------------------------------------</p>
+      <%= link_to "Add a board", new_user_board_path(current_user.id) %>
+
 </div>
