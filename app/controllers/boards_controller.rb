@@ -17,7 +17,7 @@ class BoardsController < ApplicationController
     @board = Board.new(board_params)
     @board.user = @user
     if @board.save
-      redirect_to user_path(@user)
+      redirect_to boards_path
     else
       render :new, status: :unprocessable_entity
     end
