@@ -1,15 +1,1 @@
-<h1>New Boards</h1>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <%= simple_form_for [@user, @board] do |f| %>
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :board_type, as: :select, collection: Board::BOARDTYPES %>
-        <%= f.input :price %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.submit "Submit board", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render 'form', restaurant: @restaurant, user: @user %>
