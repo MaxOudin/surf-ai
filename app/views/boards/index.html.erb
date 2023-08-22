@@ -12,7 +12,7 @@
           <div class="card-white">
             <div class="card-img">
               <% if board.photos.attached? %>
-              <%= cl_image_tag board.photo.first.key, height: 200, width: 150, crop: :fill %>
+              <%= cl_image_tag board.photos.first.key, height: 200, width: 150, crop: :fill %>
               <% else  %>
               <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" width="150" height="200" alt="">
               <% end %>
