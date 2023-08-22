@@ -33,11 +33,11 @@
   <div class="row justify-content-center">
     <div class="col-md-6">
       <%= simple_form_for [@board, @booking], html: { class: 'custom-form' } do |f| %>
-        <h1 class="text-center mb-4">Booking your board</h1>
-        <%= f.input :date_start, label: 'Date Start' %>
-        <%= f.input :date_end, label: 'Date End', input_html: { rows: 4 } %>
+        <h1 class="text-center mb-4">Réserve ta planche</h1>
+        <%= f.input :date_start, label: 'Date de début' %>
+        <%= f.input :date_end, label: 'Date de fin', input_html: { rows: 4 } %>
 
-        <%= f.submit "Submit Board", class: "btn btn-primary mt-3" %>
+        <%= f.submit "Valider la planche", class: "btn btn-primary mt-3" %>
       <% end %>
     </div>
   </div>
