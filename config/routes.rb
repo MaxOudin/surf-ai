@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   resources :boards, only: %i[index show] do
     resources :bookings, only: %i[create]
   end
+  namespace :admin do
+    resources :bookings, only: %i[index show]
+    resources :boards, only: %i[index]
+  end
 end

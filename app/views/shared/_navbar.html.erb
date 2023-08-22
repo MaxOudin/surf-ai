@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky">
   <div class="container-fluid">
     <%= link_to boards_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png"%>
@@ -22,8 +22,8 @@
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Mes planches", "#", class: "dropdown-item" %>
-              <%= link_to "Mes reservations", "#", class: "dropdown-item" %>
+              <%= link_to "Mes planches", admin_boards_path, class: "dropdown-item" %>
+              <%= link_to "Mes reservations", admin_bookings_path(current_user), class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
