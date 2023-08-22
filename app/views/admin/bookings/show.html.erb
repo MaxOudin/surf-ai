@@ -1,0 +1,21 @@
+<div class="container-fluid row justify-content-center">
+  <h2 style='text-align: center'><%= @booking.board.name.upcase %></h2>
+
+    <div class="card-white">
+      <div class="card-img">
+        <% if @booking.board.photos.attached? %>
+        <%= cl_image_tag @booking.board.photos.first.key, height: 200, width: 150, crop: :fill %>
+        <% else  %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" width="150" height="200" alt="">
+        <% end %>
+      </div>
+        <div class="content">
+        <h6><strong><%= @booking.board.name %></strong></h6>
+        <p> <strong>Categorie :</strong> <%= @booking.board.board_type %></p>
+        <p> Planche louée du <%= @booking.date_start%> au <%= @booking.date_end %></p>
+        <p> <strong><%= (@booking.board.price * (@booking.date_end - @booking.date_start))%> </strong> euros</p>
+      </div>
+      <button class="btn btn-surf"><%= link_to 'Retour sur mes réservations', admin_bookings_path(current_user) %>
+      </button>
+    </div>
+</div>
