@@ -20,3 +20,8 @@ a.nav-link:hover{
   color: #6BE897;
 
 }
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
