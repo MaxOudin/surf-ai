@@ -14,7 +14,7 @@ class BoardsController < ApplicationController
 
   def create
     @board = Board.new(board_params)
-    @board.user = @board
+    @board.user = @user
     if @board.save
       redirect_to user_path(@user)
     else
@@ -33,6 +33,6 @@ class BoardsController < ApplicationController
   end
 
   def board_params
-    params.require(:board).permit(:name, :description, :board_type, :price, photos: [])
+    params.require(:board).permit(:name, :description, :board_type, :price, :user_id, photos: [])
   end
 end
