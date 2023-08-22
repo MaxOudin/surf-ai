@@ -1,31 +1,44 @@
 <div class="container-fluid row justify-content-center">
-<h2 style='text-align: center'><%= @board.name.upcase %></h2>
-  <% if @board.photos.attached? %>
+  <h2 style='text-align: center'><%= @board.name.upcase %></h2>
+    <% if @board.photos.attached? %>
 
-    <div id="carouselExampleControls" class="carousel slide col-6" data-bs-ride="carousel" width="">
-        <div class="carousel-inner mt-5">
-          <% @board.photos.each_with_index do |photo, index| %>
-            <div class="carousel-item <%='active' if index == 0 %>">
-              <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill, class:'d-block show-img' %>
-            </div>
-          <% end %>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon arrow-color" aria-hidden="true"></span>
-        <span class="visually-hidden">Précédent</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon arrow-color" aria-hidden="true"></span>
-        <span class="visually-hidden">Suivant</span>
-        </button>
-      <% end %>
-    <div class="mt-5">
-<h3>Type de planche: <%= @board.board_type.capitalize %></h3>
-<p>Description: <%= @board.description.capitalize %></p>
-<p>Prix par jour: <%= @board.price %> Euros</p>
-<a href="#" class="btn btn-lg btn-surf" role="button">Réserver</a>
+      <div id="carouselExampleControls" class="carousel slide col-6" data-bs-ride="carousel" width="">
+          <div class="carousel-inner mt-5">
+            <% @board.photos.each_with_index do |photo, index| %>
+              <div class="carousel-item <%='active' if index == 0 %>">
+                <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill, class:'d-block show-img' %>
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon arrow-color" aria-hidden="true"></span>
+          <span class="visually-hidden">Précédent</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon arrow-color" aria-hidden="true"></span>
+          <span class="visually-hidden">Suivant</span>
+          </button>
+        <% end %>
+      <div class="mt-5">
+  <h3>Type de planche: <%= @board.board_type.capitalize %></h3>
+  <p>Description: <%= @board.description.capitalize %></p>
+  <p>Prix par jour: <%= @board.price %> Euros</p>
+  <a href="#" class="btn btn-lg btn-surf" role="button">Réserver</a>
 </div>
 <p>---------------------------------------------------</p>
+
+<div class="user-info">
+  <h5> A propos du loueur :</h5>
+  <div class="d-flex align-items-center justify-content-evenly">
+    <div class="img-avatar">
+      <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="profile picture">
+    </div>
+    <div class="content">
+      <p>name : <strong><%= @board.user.first_name %> <%= @board.user.last_name %></strong></p>
+      <p>location : <strong><%= @board.user.location %> </strong></p>
+    </div>
+  </div>
+</div>
 
 <%= link_to "Back to the list", boards_path %>
 </div>
