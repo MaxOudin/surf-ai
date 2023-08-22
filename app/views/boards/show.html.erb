@@ -29,8 +29,11 @@
 
 <%= link_to "Back to the list", boards_path %>
 
-<div data-controller="toggle" class="mt-5">
-  <button data-action="click->toggle#fire" class="btn btn-outline-primary">Réserver</button>
+<div data-controller="toggle">
+  <div class="my-5 d-flex justify-content-center">
+    <button data-action="click->toggle#fire" class="btn btn-outline-primary">Réserver</button>
+  </div>
+
   <div data-toggle-target="togglableElement" class="d-none">
     <%= render 'form', board: @board, booking: @booking %>
   </div>

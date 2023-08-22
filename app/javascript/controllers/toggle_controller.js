@@ -9,6 +9,5 @@ export default class extends Controller {
 
   fire() {
     this.togglableElementTarget.classList.toggle("d-none");
-    console.log(this.togglableElementTarget);
   }
 };
