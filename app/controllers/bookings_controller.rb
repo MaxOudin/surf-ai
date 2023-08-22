@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @board = Board.find(params[:board_id])
+    @booking.user = current_user
     @booking.board = @board
     if @booking.save
       redirect_to board_path(@board)

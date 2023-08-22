@@ -1,1 +1,15 @@
-<%= render 'form', restaurant: @restaurant, user: @user %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <%= simple_form_for [@user, @board], html: { class: 'custom-form' } do |f| %>
+        <h1 class="text-center mb-4">New Boards</h1>
+        <%= f.input :name, label: 'Board Name' %>
+        <%= f.input :description, label: 'Description', input_html: { rows: 4 } %>
+        <%= f.input :board_type, as: :select, collection: Board::BOARDTYPES, label: 'Board Type' %>
+        <%= f.input :price, label: 'Price' %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Photos' %>
+        <%= f.submit "Submit Board", class: "btn btn-primary mt-3" %>
+      <% end %>
+    </div>
+  </div>
+</div>

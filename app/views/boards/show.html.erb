@@ -50,18 +50,11 @@
         <p>localisation : <strong><%= @board.user.location %> </strong></p>
       </div>
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <%= simple_form_for [@board, @booking], html: { class: 'custom-form' } do |f| %>
-        <h1 class="text-center mb-4">Réserve ta planche</h1>
-        <%= f.input :date_start, label: 'Date de début' %>
-        <%= f.input :date_end, label: 'Date de fin', input_html: { rows: 4 } %>
-
-        <%= f.submit "Valider la planche", class: "btn btn-primary mt-3" %>
-      <% end %>
-      
-    </div>
+<div data-controller="toggle">
+  <div class="my-5 d-flex justify-content-center">
+    <button data-action="click->toggle#fire" class="btn btn-outline-primary">Réserver</button>
+  </div>
+  <div data-toggle-target="togglableElement" class="d-none">
+    <%= render 'form', board: @board, booking: @booking %>
   </div>
 </div>
-<p>Lorem, ipsum dolor sit amet consectetur <br> <br><br><br><br> <br><br><br><br><br><br><br><br> <br> adipisicing elit. At cupiditate eveniet non odio sequi placeat esse. Id est consequatur, optio, facilis corporis, quisquam cum nesciunt quas nihil natus nulla obcaecati.</p>
