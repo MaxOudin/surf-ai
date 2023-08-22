@@ -46,8 +46,8 @@
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="profile picture">
       </div>
       <div class="content">
-        <p>nom : <strong><%= @board.user.first_name %> <%= @board.user.last_name %></strong></p>
-        <p>localisation : <strong><%= @board.user.location %> </strong></p>
+        <p>Nom : <strong><%= @board.user.first_name.capitalize %> <%= @board.user.last_name.capitalize %></strong></p>
+        <p>Localisation : <strong><%= @board.user.location %> </strong></p>
       </div>
 
 <div data-controller="toggle">
