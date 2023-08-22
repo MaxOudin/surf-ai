@@ -18,11 +18,22 @@
               <% end %>
             </div>
             <div class="content">
-              <li>
-              <h6><strong><%= board.name %></h6>
-              <p></strong><%= board.description %></strong></p>
-              <p></strong><%= board.board_type %></p>
-              <p><%= board.price %> <i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
+
+              <h6><strong><%= board.name %></strong></h6>
+
+              <p> <strong>category :</strong> <%= board.board_type %></p>
+              <div class="price_rating">
+
+                <div class="rating">
+                  <i class="fa-solid fa-star" style="color: #6be897;"></i>
+                  <i class="fa-solid fa-star" style="color: #6be897;"></i>
+                  <i class="fa-solid fa-star" style="color: #6be897;"></i>
+                  <i class="fa-solid fa-star" style="color: #6be897;"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <p class="price"> <strong><%= board.price %> </strong><i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
+               </div>
             </div>
             <%= link_to '', board_path(board), class: 'card-link'  %>
            </div>
