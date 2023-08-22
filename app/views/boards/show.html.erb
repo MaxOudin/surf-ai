@@ -34,13 +34,16 @@
             <i class="fa-solid fa-star" style="color: #6be897;"></i>
             <i class="fa-solid fa-star" style="color: #6be897;"></i>
             <i class="fa-regular fa-star"></i>
-          </div>
-        <div data-controller="toggle" class="booking-div">
+        </div>
+
+        <div data-controller="toggle">
           <div class="my-5 d-flex justify-content-center">
             <button data-action="click->toggle#fire" class="btn btn-outline-primary">Réserver</button>
           </div>
-          <div data-toggle-target="togglableElement" class="d-none">
-            <%= render 'form', board: @board, booking: @booking %>
+          <div class="large">
+            <div data-toggle-target="togglableElement" class="d-none">
+              <%= render 'form', board: @board, booking: @booking %>
+            </div>
           </div>
         </div>
       </div>
