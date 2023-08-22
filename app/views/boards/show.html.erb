@@ -29,16 +29,9 @@
 
 <%= link_to "Back to the list", boards_path %>
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <%= simple_form_for [@board, @booking], html: { class: 'custom-form' } do |f| %>
-        <h1 class="text-center mb-4">Booking your board</h1>
-        <%= f.input :date_start, label: 'Date Start' %>
-        <%= f.input :date_end, label: 'Date End', input_html: { rows: 4 } %>
-
-        <%= f.submit "Submit Board", class: "btn btn-primary mt-3" %>
-      <% end %>
-    </div>
+<div data-controller="toggle" class="mt-5">
+  <button data-action="click->toggle#fire" class="btn btn-outline-primary">Réserver</button>
+  <div data-toggle-target="togglableElement" class="d-none">
+  <%= render 'form', board: @board, booking: @booking %>
   </div>
 </div>
