@@ -1,7 +1,7 @@
 <h2 style='text-align: center'>Liste de mes réservations</h2>
 
 <% @bookings.each do |booking| %>
-<h3><%=booking.board.name%></h3>
-<p>Planche louée pendant<%= (booking.date_end - booking.date_start) %> jours.</p>
+<h3><%=booking.board.name.upcase%></h3>
+<p>Planche louée pendant <%= (booking.date_end - booking.date_start).to_i %> jours.</p>
 <p><%= (booking.board.price * (booking.date_end - booking.date_start)) %> euros dans ton porte-monnaie.</p>
 <% end %>
