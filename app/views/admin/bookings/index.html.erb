@@ -1,6 +1,7 @@
 <div class="container">
   <h2 class="text-center my-4 title">Liste de mes réservations</h2>
 
+
   <div class="row ">
     <div class="col-8">
       <% @bookings.each do |booking| %>
@@ -9,9 +10,8 @@
             <div class="card-body">
               <h4 class="card-title"><%= booking.board.name.upcase %></h4>
               <p class="card-text">
-                Planche louée pendant <%= (booking.date_end - booking.date_start).to_i %> jours par <%= booking.user.first_name.capitalize %> <%= booking.user.last_name.capitalize %>
-              </p>
-
+              Planche louée pendant <%= (booking.date_end - booking.date_start).to_i %> jours auprès de <%= booking.board.user.first_name.upcase %> .
+            </p>
             </div>
             <div class="card-footer text-muted">
               <div class="price-icon">
