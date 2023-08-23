@@ -1,5 +1,4 @@
 
-
 // .booking-card {
 //   background-color: #ffffff;
 //   border: none;
@@ -21,10 +20,19 @@
 //     background-color: #8197f8;
 //     color: #ffffff;
 //     border-top: none;
-//     text-align: right;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 0.75rem 1.25rem;
 
-//     i {
-//       margin-right: 5px;
+//     .price-icon,
+//     .date-icon {
+//       display: flex;
+//       align-items: center;
+
+//       i {
+//         margin-right: 5px;
+//       }
 //     }
 //   }
 // }
@@ -59,6 +67,7 @@
     .date-icon {
       display: flex;
       align-items: center;
+      color: white;
 
       i {
         margin-right: 5px;
