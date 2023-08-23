@@ -1,4 +1,15 @@
-
+<div class="container">
+  <div class="row justify-content-end mb-4">
+    <div class="col-md-4">
+      <div class="card summary-card">
+        <div class="card-body">
+          <h5 class="card-title">Récapitulatif</h5>
+          <p class="card-text">Nombre de réservations : <%= @bookings.count %></p>
+          <p class="card-text">Gain total : <%= @bookings.sum { |booking| booking.board.price * (booking.date_end - booking.date_start) } %> euros</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <div class="container">
