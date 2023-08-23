@@ -10,7 +10,7 @@
             <div class="card-body">
               <h4 class="card-title"><%= booking.board.name.upcase %></h4>
               <p class="card-text">
-              Planche louée pendant <%= (booking.date_end - booking.date_start).to_i %> jours par <%= booking.board.user.first_name.upcase %> .
+              Planche louée pendant <%= (booking.date_end - booking.date_start).to_i %> jours par <%= booking.user.first_name.upcase %> .
             </p>
             </div>
             <div class="card-footer text-muted">
