@@ -1,0 +1,38 @@
+.footer {
+  bottom: 0px;
+  background: #8197f8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0px 50px;
+  color: white;
+  margin-top: auto;
+  width: 100vw;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 0.8;
+}
+.footer .fa-heart {
+  color: white;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-cont {
+  margin-bottom: 30px;
+}
