@@ -1,6 +1,6 @@
 <div class="container-fluid row justify-content-center "data-controller="toggle">
   <h2 style='text-align: center'><%= @board.name.upcase %></h2>
-    <div class="product-info row ">
+    <div class="product-info row my-3">
       <div class="carroussel col-8">
         <% if @board.photos.attached? %>
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" width="">
@@ -23,7 +23,7 @@
               <% end %>
             </div>
       </div>
-      <div class=" col-3">
+      <div class=" col-4">
 
         <h3>Type de planche: <%= @board.board_type.capitalize %></h3>
         <% if @board.description? %>
