@@ -1,42 +1,40 @@
 <div class="container">
-  <div class="row justify-content-end mb-4">
-    <div class="col-md-4">
-      <div class="card summary-card">
-        <div class="card-body">
-          <h5 class="card-title">Récapitulatif</h5>
-          <p class="card-text">Nombre de réservations : <%= @bookings.count %></p>
-          <p class="card-text">Gain total : <%= @bookings.sum { |booking| booking.board.price * (booking.date_end - booking.date_start) } %> euros</p>
+  <h2 class="text-center my-4 title">Liste de mes réservations</h2>
+
+  <div class="row ">
+    <div class="col-8">
+      <% @bookings.each do |booking| %>
+        <div class="mb-4">
+          <div class="card booking-card">
+            <div class="card-body">
+              <h4 class="card-title"><%= booking.board.name.upcase %></h4>
+              <p class="card-text">
+                Planche louée pendant <%= (booking.date_end - booking.date_start).to_i %> jours.
+              </p>
+            </div>
+            <div class="card-footer text-muted">
+              <div class="price-icon">
+                <i class="fas fa-coins"></i>
+                <%= (booking.board.price * (booking.date_end - booking.date_start)) %> euros
+              </div>
+              <div class="date-icon">
+                <i class="fas fa-calendar-alt"></i> <%= booking.date_start.strftime('%d/%m/%Y') %> - <%= booking.date_end.strftime('%d/%m/%Y') %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-3">
+       <div class="mb-4 sticky-card">
+        <div class="card summary-card">
+          <div class="card-body ">
+            <h5 class="card-title">Récapitulatif</h5>
+            <p class="card-text">Nombre de réservations : <%= @bookings.count %></p>
+            <p class="card-text">Gain total : <%= @bookings.sum { |booking| booking.board.price * (booking.date_end - booking.date_start) } %> euros</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-
-<div class="container">
-  <h2 class="text-center mb-4">Liste de mes réservations</h2>
-
-  <div class="row">
-    <% @bookings.each do |booking| %>
-      <div class="col-md-6 offset-md-3 mb-4">
-        <div class="card booking-card">
-          <div class="card-body">
-            <h4 class="card-title"><%= booking.board.name.upcase %></h4>
-            <p class="card-text">
-              Planche louée pendant <%= (booking.date_end - booking.date_start).to_i %> jours.
-            </p>
-          </div>
-          <div class="card-footer text-muted">
-            <div class="price-icon">
-              <i class="fas fa-coins"></i>
-              <%= (booking.board.price * (booking.date_end - booking.date_start)) %> euros
-            </div>
-            <div class="date-icon">
-              <i class="fas fa-calendar-alt"></i> <%= booking.date_start.strftime('%d/%m/%Y') %> - <%= booking.date_end.strftime('%d/%m/%Y') %>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
 </div>
