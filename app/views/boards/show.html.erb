@@ -1,46 +1,55 @@
 <div class="container-fluid row justify-content-center "data-controller="toggle">
   <h2 class="my-3" style='text-align: center'><%= @board.name.upcase %></h2>
     <div class="product-info row my-3">
-      <div class="carroussel col-8">
-        <% if @board.photos.attached? %>
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" width="">
-                <div class="carousel-inner mt-5">
-                  <% @board.photos.each_with_index do |photo, index| %>
-                    <div class="carousel-item <%='active' if index == 0 %>">
-                      <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill, class:'d-block show-img' %>
-                    </div>
-                  <% end %>
+      <div class="carroussel col-7">
+        <div class="cards-white">
 
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon arrow-color" aria-hidden="true"></span>
-                  <span class="visually-hidden">Précédent</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon arrow-color" aria-hidden="true"></span>
-                  <span class="visually-hidden">Suivant</span>
-                  </button>
+          <% if @board.photos.attached? %>
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" width="">
+                  <div class="carousel-inner mt-5">
+                    <% @board.photos.each_with_index do |photo, index| %>
+                      <div class="carousel-item <%='active' if index == 0 %>">
+                        <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill, class:'d-block show-img' %>
+                      </div>
+                    <% end %>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon arrow-color" aria-hidden="true"></span>
+                    <span class="visually-hidden">Précédent</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon arrow-color" aria-hidden="true"></span>
+                    <span class="visually-hidden">Suivant</span>
+                    </button>
+                  </div>
                 </div>
-              <% end %>
-            </div>
+          <% end %>
 
+        </div>
       </div>
       <div class=" col-4">
-
-        <h3>Type de planche: <%= @board.board_type.capitalize %></h3>
-        <% if @board.description? %>
-        <p>Description: <%= @board.description.capitalize %></p>
-        <% end %>
-        <p>Prix par jour: <strong><%= @board.price %> </strong><i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
-        <div class="rating py-2">
-            <i class="fa-solid fa-star" style="color: #6be897;"></i>
-            <i class="fa-solid fa-star" style="color: #6be897;"></i>
-            <i class="fa-solid fa-star" style="color: #6be897;"></i>
-            <i class="fa-solid fa-star" style="color: #6be897;"></i>
-            <i class="fa-regular fa-star"></i>
+      <div class="cards-white d-flex flex-column justify-content-between">
+        <div class="d-flex flex-column gap-3">
+          <h3>Type de planche: <%= @board.board_type.capitalize %></h3>
+          <% if @board.description? %>
+          <p>Description: <%= @board.description.capitalize %></p>
+          <% end %>
         </div>
-          <div class="d-flex justify-content-start p5">
-            <button data-action="click->toggle#fire" class="btn btn-lg btn-surf">Réserver</button>
+        <div class="d-flex flex-column gap-3">
+          <p>Prix par jour: <strong><%= @board.price %> </strong><i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
+          <div class="rating py-2">
+              <i class="fa-solid fa-star" style="color: #6be897;"></i>
+              <i class="fa-solid fa-star" style="color: #6be897;"></i>
+              <i class="fa-solid fa-star" style="color: #6be897;"></i>
+              <i class="fa-solid fa-star" style="color: #6be897;"></i>
+              <i class="fa-regular fa-star"></i>
           </div>
+            <div class="d-flex justify-content-start p5">
+              <button data-action="click->toggle#fire" class="btn btn-lg btn-surf">Réserver</button>
+            </div>
+          </div>
+
+      </div>
       </div>
       <div class="large my-3 d-flex justify-content-center" >
         <div data-toggle-target="togglableElement" class="d-none">
