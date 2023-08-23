@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :boards, dependent: :destroy
+  # my bookings -> la ou booking.board.user_id == current_user.id
+  has_many :rents, through: :boards, source: :bookings
+  # bookings -> bookings ou user_id == current_user.id
   has_many :bookings, dependent: :destroy
   validates :first_name, :last_name, :location, presence: true
 end

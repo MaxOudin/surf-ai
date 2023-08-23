@@ -30,7 +30,7 @@
         <% if @board.description? %>
         <p>Description: <%= @board.description.capitalize %></p>
         <% end %>
-        <p>Prix par jour: <%= @board.price %> <i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
+        <p>Prix par jour: <strong><%= @board.price %> </strong><i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
         <div class="rating py-2">
             <i class="fa-solid fa-star" style="color: #6be897;"></i>
             <i class="fa-solid fa-star" style="color: #6be897;"></i>
