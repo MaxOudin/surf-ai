@@ -10,10 +10,13 @@
               <% end %>
             </div>
             <div class="content">
+              <div class="name">
+               <h6><strong><%= board.name.upcase %></strong></h6>
+              </div>
+              <div class="category">
+               <p> <strong>Categorie :</strong> <%= board.board_type %></p>
+              </div>
 
-              <h6><strong><%= board.name.upcase %></strong></h6>
-
-              <p> <strong>Categorie :</strong> <%= board.board_type %></p>
               <div class="price_rating">
 
                 <div class="rating">
