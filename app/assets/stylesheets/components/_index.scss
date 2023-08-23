@@ -7,8 +7,16 @@
 @import "form";
 @import "user_info";
 @import "product-info";
+@import "booking";
+@import "test";
 
 
 li {
   list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Bricolage Grotesque', sans-serif;
+}
+p, a {
+  font-family: 'Montserrat', sans-serif;
 }
