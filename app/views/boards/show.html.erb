@@ -26,7 +26,9 @@
       <div class=" col-3">
 
         <h3>Type de planche: <%= @board.board_type.capitalize %></h3>
+        <% if @board.description? %>
         <p>Description: <%= @board.description.capitalize %></p>
+        <% end %>
         <p>Prix par jour: <%= @board.price %> <i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
         <div class="rating py-2">
             <i class="fa-solid fa-star" style="color: #6be897;"></i>
@@ -42,8 +44,7 @@
       <div class="large my-3 d-flex justify-content-center" >
         <div data-toggle-target="togglableElement" class="d-none">
           <%= render 'form', board: @board, booking: @booking %>
-        </div>
-      </div>
+        </div>     
 
   <div class="d-flex justify-content-center">
     <div class="user-info p-3">
@@ -58,3 +59,4 @@
     </div>
 
   </div>
+
