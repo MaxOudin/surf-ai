@@ -5,7 +5,7 @@
         <div class="card-body">
           <h5 class="card-title">Récapitulatif</h5>
           <p class="card-text">Nombre de réservations : <%= @bookings.count %></p>
-          <p class="card-text">Gain total : <%= @bookings.sum { |booking| booking.board.price * (booking.date_end - booking.date_start) } %> euros</p>
+          <p class="card-text">Dépenses total : <%= @bookings.sum { |booking| booking.board.price * (booking.date_end - booking.date_start) } %> euros</p>
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
           <div class="card-body">
             <h4 class="card-title"><%= booking.board.name.upcase %></h4>
             <p class="card-text">
-              Planche louée pendant <%= (booking.date_end - booking.date_start).to_i %> jours.
+              Planche louée pendant <%= (booking.date_end - booking.date_start).to_i %> jours auprès de <%= booking.board.user.first_name.upcase %> .
             </p>
           </div>
           <div class="card-footer text-muted">
