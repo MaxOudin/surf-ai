@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.board = @board
     if @booking.save
-      redirect_to board_path(@board)
+      redirect_to admin_bookings_path(current_user)
     else
       render "boards/show", status: :unprocessable_entity
     end
