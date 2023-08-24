@@ -2,6 +2,7 @@ class Admin::BookingsController < ApplicationController
   def index
     # Find all the boards owned by the current user
     # Initialize an empty array to store all bookings
+    @review = Review.new
     @bookings = current_user.bookings
   end
     # Loop through each board and find its bookings

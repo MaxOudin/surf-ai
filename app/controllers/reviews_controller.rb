@@ -1,8 +1,10 @@
 class ReviewsController < ApplicationController
-  def new
-    @review = Review.new
-    @board = Board.find(params[:board_id])
-  end
+  # def new
+  #   @review = Review.new
+  #   @board = Board.find(params[:board_id])
+  #   raise
+  # end
+  
 
   def create
     @review = Review.new(review_params)

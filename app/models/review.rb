@@ -4,4 +4,10 @@ class Review < ApplicationRecord
 
   validates :comment, :rating, presence: true
   validates :rating, inclusion: { in: RATINGS }
+
+  after_create :calculate_board_rating
+
+  def calculate_board_rating
+    self.board.calcul_average
+  end
 end

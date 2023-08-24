@@ -20,12 +20,12 @@
               </div>
               <div>
                 <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-avis" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <button type="button" class="btn btn-avis" data-bs-toggle="modal" data-bs-target="#<%= dom_id(booking.board) %>">
                     Laisser un avis
                   </button>
 
                   <!-- Modal -->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal fade" id="<%= dom_id(booking.board) %>" tabindex="-1" aria-labelledby="<%= dom_id(booking.board) %>Label" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="modal-body">
                           <div class="col-md-12">
-                            <%= simple_form_for [booking.board, Review.new], html: { class: 'custom-form' } do |f| %>
+                            <%= simple_form_for [booking.board, @review], html: { class: 'custom-form' } do |f| %>
                               <h1 class="text-center mb-4 title">Ajoute ton avis sur la planche</h1>
                               <%= f.input :comment, label: 'Commentaire' %>
                               <%= f.input :rating, as: :select, collection: Review::RATINGS, label: 'Note sur 5', input_html: {data: {controller: "star-rating"}} %>
