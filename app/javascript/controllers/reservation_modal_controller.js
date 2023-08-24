@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="reservation-modal"
 export default class extends Controller {
-  static targets = ["inputStartDate", 'inputEndDate', 'startDate', 'endDate'];
+  static targets = ["inputStartDate", 'inputEndDate', 'startDate', 'endDate', "totalPrice", "totalDays"];
   static values = {
     price: Number
   }
@@ -24,7 +24,8 @@ export default class extends Controller {
    const diffInDays = (endDate - startDate)/((1000*60*60*24))
    this.priceValue*diffInDays
    console.log(this.priceValue*diffInDays)
+   this.totalPriceTarget.innerText = this.priceValue*diffInDays
+   this.totalDaysTarget.innerText = diffInDays
   }
-
 
 }
