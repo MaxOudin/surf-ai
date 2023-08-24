@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
   #   @board = Board.find(params[:board_id])
   #   raise
   # end
+  
 
   def create
     @review = Review.new(review_params)
