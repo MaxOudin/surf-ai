@@ -69,16 +69,16 @@
       </div>
     </div>
   </div>
-  <div>
+  <div class="mt-5">
     <h3>Mes reviews</h3>
-    <div class="card">
       <% @board.reviews.each do |review|%>
-      <p><b>Commentaire:</b> <%= review.comment %></p>
-      <p><b>Note:</b> <% review.rating.to_i.times do %>
+      <div class="card-white">
+      <p><b>Commentaire :  </b> <%= review.comment.capitalize %></p>
+      <p><b>Note :  </b> <% review.rating.to_i.times do %>
         <i class="fa-solid fa-star" style="color: #6be897;"></i>
         <% end %> <%=review.rating%>/5</p>
+      </div>
       <% end %>
-    </div>
   </div>
 </div>
 </div>
