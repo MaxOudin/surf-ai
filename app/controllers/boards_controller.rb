@@ -3,6 +3,9 @@ class BoardsController < ApplicationController
   before_action :authenticate_user!
   def index
     @boards = Board.all
+    if params[:query].present?
+      @boards = @boards.where(board_type: params[:query])
+    end
     @users = User.joins(:boards).distinct
     @markers = @users.geocoded.map do |user|
       {
@@ -17,6 +20,15 @@ class BoardsController < ApplicationController
   def show
     @board = Board.find(params[:id])
     @booking = Booking.new
+    @board.calcul_average
+    @markers = [
+      {
+        lat: @board.user.latitude,
+        lng: @board.user.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {user: @board.user}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    ]
   end
 
   def new

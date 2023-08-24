@@ -4,7 +4,7 @@
       <h1 class="text-center mb-4">Réserve ta planche de surf</h1>
       <%= f.input :date_start, label: 'Date de début', as: :string, input_html: { data: { controller: "datepicker", reservation_modal_target: 'inputStartDate' } } %>
       <%= f.input :date_end, label: 'Date de fin', as: :string, input_html: { data: { controller: "datepicker", reservation_modal_target: 'inputEndDate'  } } %>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingConfirmation" data-action='click->reservation-modal#displayContent'>
+      <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#bookingConfirmation" data-action='click->reservation-modal#displayContent'>
         Valider
       </button>
       <div class="modal fade" id="bookingConfirmation" tabindex="-1" role="dialog" aria-labelledby="reservationModalLabel" aria-hidden="true" >
@@ -12,8 +12,8 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="reservationModalLabel">Récapitulatif de la réservation</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+
+
               </button>
             </div>
             <div class="modal-body">
@@ -25,8 +25,8 @@
                 <li>Prix Total de votre réservation : <span data-reservation-modal-target="totalPrice"></span>€</li>
               </ul>
             </div>
-            <div class="modal-footer">
-              <%= link_to "Annuler", board_path(board), class: "btn btn-secondary", data: { dismiss: "modal" } %>
+            <div class="modal-footer justify-content-between">
+              <%= link_to "Annuler", board_path(board), class: "btn btn-warning btn-cancel mt-3", data: { dismiss: "modal" } %>
               <%= f.button :submit, "Valide ta réservation", class: "btn btn-primary mt-3", data: { toggle: "modal", target: "reservation-modal.modal" } %>
             </div>
           </div>
