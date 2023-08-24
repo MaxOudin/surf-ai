@@ -26,7 +26,7 @@
               </ul>
             </div>
             <div class="modal-footer">
-              <%= link_to "Annuler", "#", class: "btn btn-secondary", data: { dismiss: "modal" } %>
+              <%= link_to "Annuler", board_path(board), class: "btn btn-secondary", data: { dismiss: "modal" } %>
               <%= f.button :submit, "Valide ta réservation", class: "btn btn-primary mt-3", data: { toggle: "modal", target: "reservation-modal.modal" } %>
             </div>
           </div>
