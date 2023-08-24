@@ -1,0 +1,16 @@
+
+
+  <% user.boards.each do |board| %>
+    <div class="my-3 card-window d-flex flex-column ">
+
+      <div class=" d-flex flex-column align-items-center">
+        <% if board.photos.attached? %>
+          <%= cl_image_tag board.photos.first.key, height: 100, width: 100, crop: :fill %>
+          <% else  %>
+          <img src="https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-x-yk-planche-de-surf-sport-et-lifestyle--R96912_PM2_Front%20view.jpg" width="50" height="100" alt="">
+        <% end %>
+      </div>
+      <h6 class="pt-2"><%= board.name %></h6>
+    </div>
+      <%= link_to '', board_path(board), class: 'card-link'  %>
+  <% end %>

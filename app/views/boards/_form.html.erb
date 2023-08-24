@@ -1,10 +1,39 @@
 <div class="container">
   <div class="row justify-content-center">
-      <%= simple_form_for [board, booking], html: { class: 'custom-form' } do |f| %>
-        <h1 class="text-center mb-4">Réserve ta planche de surf </h1>
-        <%= f.input :date_start, label: 'Date Start', as: :string, input_html: { data: { controller: "datepicker" } } %>
-        <%= f.input :date_end, label: 'Date End', as: :string, input_html: { data: { controller: "datepicker" } } %>
-        <%= f.submit "Valide ta réservation", class: "btn btn-primary mt-3"%>
-      <% end %>
+    <%= simple_form_for [board, booking], html: { class: 'custom-form' } do |f| %>
+      <h1 class="text-center mb-4">Réserve ta planche de surf</h1>
+      <%= f.input :date_start, label: 'Date de début', as: :string, input_html: { data: { controller: "datepicker", reservation_modal_target: 'inputStartDate' } } %>
+      <%= f.input :date_end, label: 'Date de fin', as: :string, input_html: { data: { controller: "datepicker", reservation_modal_target: 'inputEndDate'  } } %>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookingConfirmation" data-action='click->reservation-modal#displayContent'>
+        Valider
+      </button>
+      <div class="modal fade" id="bookingConfirmation" tabindex="-1" role="dialog" aria-labelledby="reservationModalLabel" aria-hidden="true" >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="reservationModalLabel">Récapitulatif de la réservation</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Vous êtes sur le point de valider la location suivante :</p>
+              <ul>
+                <li>Date de début : <span data-reservation-modal-target="startDate"></span></li>
+                <li>Date de fin : <span data-reservation-modal-target="endDate"></span></li>
+                <li>Durée de la location : <span data-reservation-modal-target="totalDays"></span>jours</li>
+                <li>Prix Total de votre réservation : <span data-reservation-modal-target="totalPrice"></span>€</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <%= link_to "Annuler", board_path(board), class: "btn btn-secondary", data: { dismiss: "modal" } %>
+              <%= f.button :submit, "Valide ta réservation", class: "btn btn-primary mt-3", data: { toggle: "modal", target: "reservation-modal.modal" } %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%#= f.button :submit, "Valide ta réservation", class: "btn btn-primary mt-3", data: { toggle: "modal", target: "reservation-modal.modal" } %>
+    <% end %>
   </div>
 </div>
