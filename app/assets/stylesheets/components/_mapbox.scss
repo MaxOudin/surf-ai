@@ -7,13 +7,23 @@
 
 .card-window {
 
-  background-color: #8197F8;
+  background-color:   #4f6df7;
+
   border-radius: 16px;
   width: 90%;
   padding: 8px;
+  color: white;
+  a {
+    text-decoration: none;
+    color: white;
+
+  }
   img {
     border-radius: 8px;
     background-color: white;
   }
-
+ &:hover {
+  background-color: #8196F8;
+  transition: 0.5s;
+ }
 }
