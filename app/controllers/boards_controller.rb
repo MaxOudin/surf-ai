@@ -18,6 +18,14 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
     @booking = Booking.new
     @board.calcul_average
+    @markers = [
+      {
+        lat: @board.user.latitude,
+        lng: @board.user.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {user: @board.user}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    ]
   end
 
   def new
