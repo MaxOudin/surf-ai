@@ -1,9 +1,22 @@
 .product-info {
   margin-top: 12px;
-  .btn {
+  .btn-primary {
     background-color: #8196f8;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    transition: background-color 0.2s ease-in-out;
   }
+
   .btn:hover{
     background-color: #6BE897;
   }
+}
+.btn-cancel {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out;
 }
