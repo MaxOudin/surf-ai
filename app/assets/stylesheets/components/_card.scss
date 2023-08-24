@@ -11,7 +11,7 @@ ul {
 .card-white {
   background-color: white;
   padding: 8px;
-  width: 75%;
+  width: 90%;
   height: auto;
   margin: 16px;
   border-radius: 16px;
@@ -72,19 +72,19 @@ ul {
     }
 @media (min-width: 600px) {
   .cards {
-      grid-template-columns: 1fr 1fr;}
+      grid-template-columns: 1fr;}
   }
 
 /* // Medium devices (tablets, 768px and up) */
-@media (min-width: 900px) {
+@media (min-width: 990px) {
   .cards {
-      grid-template-columns: 1fr 1fr 1fr;}
+      grid-template-columns: 1fr 1fr;}
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 1200px) {
   .cards {
-      grid-template-columns: 1fr 1fr 1fr 1fr;}
+      grid-template-columns: 1fr 1fr 1fr;}
 }
 .price_rating {
   display: flex;

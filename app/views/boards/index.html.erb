@@ -5,11 +5,15 @@
 
 <h5 class="card-text mx-3 my-3"><strong> <%= @boards.count %> </strong>planches sont disponibles actuellement</h5>
 
-  <%= render 'shared/index' %>
-
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
+<div class="row">
+  <div class="col-8">
+    <%= render 'shared/index' %>
+  </div>
+<div class="col-4">
+  <div class="mapbox sticky-card"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
+  </div>
 </div>
