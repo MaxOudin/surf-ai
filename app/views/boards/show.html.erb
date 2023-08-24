@@ -38,7 +38,7 @@
         <div class="d-flex flex-column gap-3">
           <p>Prix par jour: <strong><%= @board.price %> </strong><i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
 
-       <%= render "shared/star_rating", board: @board %>
+          <%= render "shared/star_rating", board: @board %>
 
             <div class="d-flex justify-content-start p5">
               <button data-action="click->toggle#fire" class="btn btn-lg btn-surf">Réserver</button>
@@ -69,8 +69,9 @@
       </div>
     </div>
   </div>
-  <div class="mt-5">
-    <h3>Mes reviews</h3>
+<% if @board.reviews.exists? %>
+  <div class="mt-5 ms-5">
+    <h3>Les avis des précédents loueurs</h3>
       <% @board.reviews.each do |review|%>
       <div class="card-white">
       <p><b>Commentaire :  </b> <%= review.comment.capitalize %></p>
@@ -80,5 +81,10 @@
       </div>
       <% end %>
   </div>
+  <% else %>
+    <div class="mt-5 ms-5">
+    <h5>Cette nouvelle planche n'a pas encore d'avis</h5>
+    </div>
+  <% end %>
 </div>
 </div>
