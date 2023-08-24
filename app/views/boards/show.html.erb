@@ -56,20 +56,30 @@
 
 
 
+  <div class="row justify-content-center align-items-center">
+    <div class="col-7">
+      <div class="d-flex justify-content-center">
+        <div class="user-info p-3">
+          <h5> A propos du loueur :</h5>
+          <div class="d-flex align-items-center justify-content-evenly">
+            <div class="img-avatar">
+              <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="profile picture">
+            </div>
 
-
-  <div class="d-flex justify-content-center">
-    <div class="user-info p-3">
-      <h5> A propos du loueur :</h5>
-      <div class="d-flex align-items-center justify-content-evenly">
-        <div class="img-avatar">
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="profile picture">
+            <div class="content">
+              <p>nom : <strong><%= @board.user.first_name %> <%= @board.user.last_name %></strong></p>
+              <p>localisation : <strong><%= @board.user.location %> </strong></p>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div class="content">
-          <p>nom : <strong><%= @board.user.first_name %> <%= @board.user.last_name %></strong></p>
-          <p>localisation : <strong><%= @board.user.location %> </strong></p>
-        </div>
+    <div class="col-5">
+      <div class="mapbox-show sticky-card"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
     </div>
   </div>
