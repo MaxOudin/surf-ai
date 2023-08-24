@@ -3,6 +3,9 @@ class BoardsController < ApplicationController
   before_action :authenticate_user!
   def index
     @boards = Board.all
+    if params[:query].present?
+      @boards = @boards.where(board_type: params[:query])
+    end
     @users = User.joins(:boards).distinct
     @markers = @users.geocoded.map do |user|
       {
