@@ -10,4 +10,11 @@ class Board < ApplicationRecord
   validates :board_type, inclusion: { in: BOARDTYPES }
 
   has_many_attached :photos
+
+  def calcul_average
+    review_nb = self.reviews.count
+    reviews_sum = self.reviews.sum(:rating)
+    average = reviews_sum.fdiv(review_nb)
+    self.average_rating = average
+  end
 end

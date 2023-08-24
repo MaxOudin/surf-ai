@@ -43,6 +43,7 @@
               <i class="fa-solid fa-star" style="color: #6be897;"></i>
               <i class="fa-solid fa-star" style="color: #6be897;"></i>
               <i class="fa-regular fa-star"></i>
+              <p><%= @board.average_rating %></p>
           </div>
             <div class="d-flex justify-content-start p5">
               <button data-action="click->toggle#fire" class="btn btn-lg btn-surf">Réserver</button>
@@ -72,6 +73,13 @@
         </div>
       </div>
     </div>
+  </div>
+  <div>
+    <h3>Mes reviews</h3>
+    <% @board.reviews.each do |review|%>
+    <p>Commentaire: <%= review.comment %></p>
+    <p>Note: <%= review.rating %></p>
+    <% end %>
   </div>
 </div>
 </div>
