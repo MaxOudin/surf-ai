@@ -37,14 +37,9 @@
         </div>
         <div class="d-flex flex-column gap-3">
           <p>Prix par jour: <strong><%= @board.price %> </strong><i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
-          <div class="rating py-2">
-              <i class="fa-solid fa-star" style="color: #6be897;"></i>
-              <i class="fa-solid fa-star" style="color: #6be897;"></i>
-              <i class="fa-solid fa-star" style="color: #6be897;"></i>
-              <i class="fa-solid fa-star" style="color: #6be897;"></i>
-              <i class="fa-regular fa-star"></i>
-              <p><%= @board.average_rating %></p>
-          </div>
+
+       <%= render "shared/star_rating", board: @board %>
+
             <div class="d-flex justify-content-start p5">
               <button data-action="click->toggle#fire" class="btn btn-lg btn-surf">Réserver</button>
             </div>
@@ -76,10 +71,14 @@
   </div>
   <div>
     <h3>Mes reviews</h3>
-    <% @board.reviews.each do |review|%>
-    <p>Commentaire: <%= review.comment %></p>
-    <p>Note: <%= review.rating %></p>
-    <% end %>
+    <div class="card">
+      <% @board.reviews.each do |review|%>
+      <p><b>Commentaire:</b> <%= review.comment %></p>
+      <p><b>Note:</b> <% review.rating.to_i.times do %>
+        <i class="fa-solid fa-star" style="color: #6be897;"></i>
+        <% end %> <%=review.rating%>/5</p>
+      <% end %>
+    </div>
   </div>
 </div>
 </div>

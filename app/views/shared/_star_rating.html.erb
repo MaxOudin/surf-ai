@@ -1,0 +1,18 @@
+<div class="rating py-2">
+<% unless board.average_rating.nan? %>
+  <% if board.average_rating.class == 'integer' %>
+    <% board.average_rating.to_i.times do %>
+      <i class="fa-solid fa-star" style="color: #6be897;"></i>
+      <% end %></p> </div>
+    <% else %>
+      <% board.average_rating.to_i.times do %>
+        <i class="fa-solid fa-star" style="color: #6be897;"></i>
+    <% end %>
+      <i class="fa-solid fa-star-half" style="color: #6be897;"></i><%=board.average_rating%>/5</p> </div>
+  <% end %>
+  <% else %>
+  <% 1.times do %>
+    <i class="fa-solid fa-star" style="color: #808080;">Nouveau</i>
+  <% end %>
+<% end %>
+</div>
