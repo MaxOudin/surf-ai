@@ -20,11 +20,7 @@
               <div class="price_rating">
 
                 <div class="rating">
-                  <i class="fa-solid fa-star" style="color: #6be897;"></i>
-                  <i class="fa-solid fa-star" style="color: #6be897;"></i>
-                  <i class="fa-solid fa-star" style="color: #6be897;"></i>
-                  <i class="fa-solid fa-star" style="color: #6be897;"></i>
-                  <i class="fa-regular fa-star"></i>
+                  <%= render "shared/star_rating", board: board %>
                 </div>
 
                 <p class="price"> <strong><%= board.price %> </strong><i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
