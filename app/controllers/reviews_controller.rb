@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    @board.calcul_average
   end
 
   private

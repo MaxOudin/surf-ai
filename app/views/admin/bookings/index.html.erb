@@ -18,6 +18,34 @@
                 <i class="fas fa-coins"></i>
                 <%= (booking.board.price * (booking.date_end - booking.date_start)) %> euros
               </div>
+              <div>
+                <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-avis" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Laisser un avis
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Laisser mon avis</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="col-md-12">
+                            <%= simple_form_for [booking.board, Review.new], html: { class: 'custom-form' } do |f| %>
+                              <h1 class="text-center mb-4 title">Ajoute ton avis sur la planche</h1>
+                              <%= f.input :comment, label: 'Commentaire' %>
+                              <%= f.input :rating, as: :select, collection: Review::RATINGS, label: 'Note sur 5', input_html: {data: {controller: "star-rating"}} %>
+                              <%= f.submit "Valide ton avis", class: "btn btn-primary mt-3" %>
+                              <% end %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
               <div class="date-icon">
                 <i class="fas fa-calendar-alt"></i> <%= booking.date_start.strftime('%d/%m/%Y') %> - <%= booking.date_end.strftime('%d/%m/%Y') %>
               </div>
