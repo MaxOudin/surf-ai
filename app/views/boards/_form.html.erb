@@ -25,8 +25,8 @@
                 <li>Prix Total de votre réservation : <span data-reservation-modal-target="totalPrice"></span>€</li>
               </ul>
             </div>
-            <div class="modal-footer">
-              <%= link_to "Annuler", board_path(board), class: "btn btn-secondary", data: { dismiss: "modal" } %>
+            <div class="modal-footer justify-content-between">
+              <%= link_to "Annuler", board_path(board), class: "btn btn-primary mt-3", data: { dismiss: "modal" } %>
               <%= f.button :submit, "Valide ta réservation", class: "btn btn-primary mt-3", data: { toggle: "modal", target: "reservation-modal.modal" } %>
             </div>
           </div>
