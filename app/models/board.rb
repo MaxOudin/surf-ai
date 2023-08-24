@@ -14,7 +14,8 @@ class Board < ApplicationRecord
   def calcul_average
     review_nb = self.reviews.count
     reviews_sum = self.reviews.sum(:rating)
-    average = reviews_sum.fdiv(review_nb)
+    average = reviews_sum.fdiv(review_nb).round(1)
     self.average_rating = average
+    self.save
   end
 end

@@ -17,7 +17,6 @@ class BoardsController < ApplicationController
   def show
     @board = Board.find(params[:id])
     @booking = Booking.new
-    @board.calcul_average
   end
 
   def new
