@@ -4,7 +4,8 @@ class BoardsController < ApplicationController
   def index
     @boards = Board.all.order(updated_at: :desc)
     if params[:query].present?
-      @boards = @boards.where(board_type: params[:query])
+      sql_subquery = "name ILIKE :query OR description ILIKE :query OR board_type ILIKE :query"
+      @boards = @boards.where(sql_subquery, query: "%#{params[:query]}%")
     end
     @users = User.joins(:boards).distinct
     @markers = @users.geocoded.map do |user|
