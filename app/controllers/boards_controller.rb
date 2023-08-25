@@ -2,7 +2,7 @@ class BoardsController < ApplicationController
   before_action :find_user_id, only: %i[new create]
   before_action :authenticate_user!
   def index
-    @boards = Board.all
+    @boards = Board.all.order(updated_at: :desc)
     if params[:query].present?
       @boards = @boards.where(board_type: params[:query])
     end
