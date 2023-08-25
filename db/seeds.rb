@@ -13,8 +13,9 @@ Board.destroy_all
 User.destroy_all
 
 photos_long = [
-  "https://res.cloudinary.com/dyleaesxc/image/upload/v1692875002/development/b0yh9nrsfg43fsljvgduyc809rue.avif",
-  "https://res.cloudinary.com/dyleaesxc/image/upload/v1692875003/development/8d6tza6zab2im7rv7unx69bgpdoq.avif"
+  "https://res.cloudinary.com/dyleaesxc/image/upload/v1692964620/longboard-900-9-67-l-livre-avec-2-1-aileron-central-de-8_vy6hwf.jpg",
+  "https://res.cloudinary.com/dyleaesxc/image/upload/v1692964620/longboard-900-9-67-l-livre-avec-2-1-aileron-central-de-8_1_ahuor1.jpg",
+  "https://res.cloudinary.com/dyleaesxc/image/upload/v1692964619/longboard-900-9-67-l-livre-avec-2-1-aileron-central-de-8_2_zkelxt.jpg"
 ]
 
 photos_long2 = [
