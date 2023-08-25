@@ -26,7 +26,7 @@
                 <p class="price"> <strong><%= board.price %> </strong><i class="fa-solid fa-euro-sign" style="color: #8197f8;"></i></p>
                </div>
           <div class="d-flex mt-2">
-            <%= link_to "Modifier", edit_admin_board_path(board), class: "btn btn-primary mr-2" %>
+            <%= link_to "Modifier", edit_admin_board_path(board), class: "btn btn-primary" %>
             <%= link_to "Supprimer", admin_board_path(board), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-danger" %>
           </div>
         <% end %>
