@@ -3,7 +3,7 @@ class Admin::BookingsController < ApplicationController
     # Find all the boards owned by the current user
     # Initialize an empty array to store all bookings
     @review = Review.new
-    @bookings = current_user.bookings
+    @bookings = current_user.bookings.order(created_at: :desc)
   end
     # Loop through each board and find its bookings
     # @boards.each do |board|
