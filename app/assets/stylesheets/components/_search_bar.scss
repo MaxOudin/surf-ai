@@ -1,6 +1,7 @@
 
 .search-bar
 {
+  margin-top: 8px;
   top: 1000px;
   border: 1px solid black;
   border-radius: 10px;
@@ -25,4 +26,9 @@
 .btn:hover{
   background-color: #6BE897;
 }
+
+::placeholder {
+  color: #8196f8;
+}
+
 }
