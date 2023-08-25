@@ -8,10 +8,14 @@
         <div class="mb-4">
           <div class="card booking-card">
             <div class="card-body">
-              <h4 class="card-title"><%= booking.board.name.upcase %></h4>
+              <h4 class="card-title"> <%= link_to booking.board.name.upcase, board_path(booking.board) %></h4>
               <p class="card-text">
-              Planche louée pendant <%= (booking.date_end - booking.date_start).to_i %> jours auprès de <%= booking.board.user.first_name.upcase %> .
+              Localisée à <%= booking.board.user.location %>
+              </p>
+              <p class="card-text">
+              Planche louée pendant <%= (booking.date_end - booking.date_start).to_i %> jours auprès de <%= booking.board.user.first_name.upcase %>.
             </p>
+
             </div>
             <div class="card-footer text-muted">
               <div class="price-icon">
