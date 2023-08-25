@@ -43,7 +43,7 @@ photo_pablo = URI.open("https://res.cloudinary.com/dyleaesxc/image/upload/v16929
 puts "creation db seed ongoing"
 
 brice = User.new(first_name: 'Brice', last_name: 'DeNice', location: 'Boulevard De La Dune, 40150 Soorts-Hossegor, France', phone_number: '06 06 06 06 06', email: 'brice@toto.com', password: 'azeaze')
-pablo = User.new(first_name: 'Pablo', last_name: 'Dishaka', location: 'Allée Wiston Churchill, Biarritz, Pyrénées-Atlantiques, France', phone_number: '07 07 07 07 07', email: 'pablo@toto.com', password: 'azeaze')
+pablo = User.new(first_name: 'Pablo', last_name: 'Dishaka', location: 'rue de madrid, Biarritz, France', phone_number: '07 07 07 07 07', email: 'pablo@toto.com', password: 'azeaze')
 kelly = User.new(first_name: 'Kelly', last_name: 'Slater', location: 'Boulevard de la Plage, Lacanau, Gironde, France', phone_number: '06 07 06 07 06', email: 'kelly@toto.com', password: 'azeaze')
 
 puts "creation 3 users done"
@@ -132,7 +132,7 @@ book.board = longboard
 book.user = pablo
 book.save
 
-review = Review.new(comment: "Ca aurait pu etre mieux mais je suis tout de même satisfait", rating: "4")
+review = Review.new(comment: "Ca aurait pu etre mieux, mais je suis tout de même satisfait", rating: "4")
 review.board = longboard
 review.save
 
