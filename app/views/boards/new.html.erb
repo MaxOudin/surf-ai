@@ -1,13 +1,15 @@
 <div class="container my-4">
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="forms col-md-6">
       <%= simple_form_for [@user, @board], html: { class: 'custom-form' } do |f| %>
         <h1 class="text-center mb-4 title">Ajoute une planche</h1>
         <%= f.input :name, label: 'Nom de la planche' %>
         <%= f.input :description, label: 'Description', input_html: { rows: 4 } %>
-        <%= f.input :board_type, as: :select, collection: Board::BOARDTYPES, label: 'Type de planche' %>
+        <%= f.input :board_type, as: :select, collection: Board::BOARDTYPES, label: 'Type de planche', input_html: {data: {controller: "tom-select", tom_select_options_value: {tags: true}}} %>
         <%= f.input :price, label: 'Prix' %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Photos' %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Photos', class:'picture-select'%>
+
+
         <%= f.submit "Valide ta planche", class: "btn btn-primary mt-3" %>
       <% end %>
     </div>
