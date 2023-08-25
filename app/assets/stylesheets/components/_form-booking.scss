@@ -5,7 +5,7 @@
  }
 }
 .forms {
- .form-control {
+ .form-control, .ts-control {
 background-color: white;
 border: 1px solid black;
 border-radius: 8px;
@@ -16,9 +16,4 @@ border-radius: 8px;
   background-color: black;
  }
  }
-}
-
-.ts-wrapper {
-  background-color: white;
-  border: none;
 }

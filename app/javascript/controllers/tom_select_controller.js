@@ -6,6 +6,7 @@ export default class extends Controller {
   static values = { options: Object }
 
   connect() {
+    this.element.classList.remove("form-select")
     const options = {
       create: true,
       sortField: {
