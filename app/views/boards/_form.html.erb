@@ -14,14 +14,50 @@
               <h5 class="modal-title" id="reservationModalLabel">Récapitulatif de la réservation</h5>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body modal-padding">
               <p>Vous êtes sur le point de valider la location suivante :</p>
+              <div class="">
               <ul>
-                <li>Date de début : <span data-reservation-modal-target="startDate"></span></li>
-                <li>Date de fin : <span data-reservation-modal-target="endDate"></span></li>
-                <li>Durée de la location : <span data-reservation-modal-target="totalDays"></span>jours</li>
-                <li>Prix Total de votre réservation : <span data-reservation-modal-target="totalPrice"></span>€</li>
+
+                <div class="d-flex flex-row justify-content-between">
+                  <div>
+                    <li>Date de début :
+                  </div>
+                  <div>
+                    <strong>
+                    <span data-reservation-modal-target="startDate"></span> </strong></li>
+                  </div>
+                </div>
+
+                <div class="d-flex flex-row justify-content-between">
+                  <div>
+                    <li>Date de fin :
+                  </div>
+                  <div>
+                  <strong>
+                    <span data-reservation-modal-target="endDate"></span> </strong></li>
+                  </div>
+                </div>
+                <div class="d-flex flex-row justify-content-between">
+                  <div>
+                     <li>Durée de la location :
+                    </div>
+                    <div>
+                      <strong>
+                        <span data-reservation-modal-target="totalDays"></span> jours </strong></li>
+                    </div>
+                  </div>
+                <div class="d-flex flex-row justify-content-between">
+                  <div>
+                    <li>Total de votre réservation :
+                  </div>
+                  <div>
+                    <strong>
+                     <span data-reservation-modal-target="totalPrice"></span>€ </strong></li>
+                  </div>
+                </div>
               </ul>
+              </div>
             </div>
             <div class="modal-footer justify-content-between">
               <%= link_to "Annuler", board_path(board), class: "btn btn-warning btn-cancel mt-3", data: { dismiss: "modal" } %>
