@@ -35,9 +35,9 @@ photos_fish = [
   "https://res.cloudinary.com/dyleaesxc/image/upload/v1692800272/production/q9gwkrvvld5ztdae5d5vnjwkel8d.jpg"
 ]
 
-# photo_brice = URI.open("https://res.cloudinary.com/dyleaesxc/image/upload/v1692953861/affiche-promotionnelle-de-brice-de-nice-2005_portrait_w674_ho2ci0.jpg")
-# photo_kelly = URI.open("https://res.cloudinary.com/dyleaesxc/image/upload/v1692954126/jhegfsrg_i32krr.png")
-# photo_pablo = URI.open("https://res.cloudinary.com/dyleaesxc/image/upload/v1692953861/d412c_fwbota.jpg")
+photo_brice = URI.open("https://res.cloudinary.com/dyleaesxc/image/upload/v1692953861/affiche-promotionnelle-de-brice-de-nice-2005_portrait_w674_ho2ci0.jpg")
+photo_kelly = URI.open("https://res.cloudinary.com/dyleaesxc/image/upload/v1692954126/jhegfsrg_i32krr.png")
+photo_pablo = URI.open("https://res.cloudinary.com/dyleaesxc/image/upload/v1692953861/d412c_fwbota.jpg")
 
 puts "creation db seed ongoing"
 
@@ -51,6 +51,10 @@ longboard = Board.new(name: "Beginner's Soft-Top Longboard", board_type: "longbo
 longboard2 = Board.new(name: "Longboard beautiful 900 9'4", board_type: "longboard", description: "A stable and forgiving soft-top longboard, perfect for beginners learning to catch their first waves.", price: 22)
 shortboard = Board.new(name: "Performance Shortboard", board_type: "shortboard", description: "A versatile fish hybrid surfboard, great for riders who want speed and maneuverability in all conditions.", price: 35)
 fish = Board.new(name: "Fish Hybrid Surfboard", board_type: "fish", description: "A versatile fish hybrid surfboard, great for riders who want speed and maneuverability in all conditions.", price: 32)
+
+brice.photo.attach(io: photo_brice, filename: "nes.png", content_type: "image/png")
+kelly.photo.attach(io: photo_kelly, filename: "nes.png", content_type: "image/png")
+pablo.photo.attach(io: photo_pablo, filename: "nes.png", content_type: "image/png")
 
 photos_long.each do |url|
   file = URI.open(url)
