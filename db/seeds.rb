@@ -132,7 +132,7 @@ book.board = longboard
 book.user = pablo
 book.save
 
-review = Review.new(comment: "Ca aurait pu etre mieux mais je suis tout de même satisfait", rating: "4")
+review = Review.new(comment: "Ca aurait pu etre mieux, mais je suis tout de même satisfait", rating: "4")
 review.board = longboard
 review.save
 
