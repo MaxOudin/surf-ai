@@ -19,7 +19,11 @@
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "#{current_user.first_name}" %>
+            <% if current_user.photo.present? %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "#{current_user.first_name}" %>
+            <% else %>
+                <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="photo wagon">
+            <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mes planches", admin_boards_path, class: "dropdown-item" %>
