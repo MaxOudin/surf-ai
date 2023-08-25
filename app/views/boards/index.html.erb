@@ -4,6 +4,7 @@
 <div class="container">
 <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
+  <div class="search-bar ">
     <%= form_with url: boards_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
@@ -12,6 +13,7 @@
         %>
       <%= submit_tag "Filtrer", name: "", class: "btn btn-primary" %>
     <% end %>
+    </div>
   </div>
 </div>
 <h5 class="card-text mx-3 my-3"><strong> <%= @boards.count %> </strong>planches sont disponibles actuellement</h5>
