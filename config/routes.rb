@@ -18,6 +18,6 @@ Rails.application.routes.draw do
         get :rents
       end
     end
-    resources :boards, only: %i[index]
+    resources :boards, only: %i[index edit update destroy]
   end
 end
