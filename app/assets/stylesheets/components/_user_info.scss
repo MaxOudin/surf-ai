@@ -7,16 +7,29 @@
   width: 1000%;
   height: 200px;
   margin-top: 32px;
+
+
 }
 .img-avatar {
  margin-left: 8px;
  margin-right: 16px;
  width: 80px;
   img {
+<<<<<<< HEAD
   margin: 8px 0px;
   border-radius: 150%;
   width: 75px;
   object-fit: cover;
   object-position: center;
+=======
+
+>>>>>>> cdb8a5721bc78e48b01fe88677e42c33520b0218
 }
+}
+.avatar-show {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-position: center;
+  object-fit: cover;
 }

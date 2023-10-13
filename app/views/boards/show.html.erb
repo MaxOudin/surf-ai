@@ -64,7 +64,7 @@
           <div class="d-flex align-items-center justify-content-evenly">
             <div class="img-avatar">
               <% if @board.user.photo.present? %>
-                <%= cl_image_tag @board.user.photo.key, class: "avatar", alt: "#{current_user.first_name}" %>
+                <%= cl_image_tag @board.user.photo.key, class: "avatar-show", alt: "#{current_user.first_name}" %>
               <% else %>
                 <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="photo wagon">
               <% end %>
