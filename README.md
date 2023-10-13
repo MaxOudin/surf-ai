@@ -10,3 +10,7 @@ Context: This web app has been developped by Theo, Pablo and Maxime during 'Airb
 
 <img src="/Home_surf.png" alt="Homepage">
 <img src="/Show_board_surf.png" alt="Board details">
+
+#### Technologies used
+
+Ruby, Rails, JavaScript, Stimulus, Mapbox, Cloudinary, SQL, Flatpickr, Bootstrap, Devise, Star-rating, Tom Select, Github, Heroku, Trello, Notion, Slack
