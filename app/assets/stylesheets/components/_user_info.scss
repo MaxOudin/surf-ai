@@ -13,8 +13,13 @@
 .img-avatar {
  margin-left: 8px;
  margin-right: 16px;
+ width: 80px;
   img {
-
+  margin: 8px 0px;
+  border-radius: 150%;
+  width: 75px;
+  object-fit: cover;
+  object-position: center;
 }
 }
 .avatar-show {
